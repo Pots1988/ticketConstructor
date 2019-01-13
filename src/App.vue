@@ -1,29 +1,34 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="constructor wrap">
+      <ConstructorAside></ConstructorAside>
+      <ConstructorResult></ConstructorResult>
     </div>
-    <router-view/>
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import ConstructorAside from '@/components/ConstructorAside/ConstructorAside'
+import ConstructorResult from '@/components/ConstructorResult/ConstructorResult'
+
+export default {
+  components: {
+    ConstructorAside,
+    ConstructorResult
   }
 }
+
+</script>
+
+<style lang="scss">
+  .wrap {
+    max-width: calc(342px + 210mm);
+    min-width: calc(342px + 210mm);
+    margin: 0 auto;
+    padding: 20px 10px;
+  }
+
+  .constructor {
+    display: flex;
+  }
 </style>
